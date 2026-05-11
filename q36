@@ -1,0 +1,10 @@
+# 36. Affine Cipher One-to-One Property
+
+a = 5
+for x1 in range(26):
+    for x2 in range(x1 + 1, 26):
+        if (a * x1) % 26 == (a * x2) % 26:
+            print("Not one-to-one")
+            break
+else:
+    print("Affine cipher is one-to-one when gcd(a,26)=1")
