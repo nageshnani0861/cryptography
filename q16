@@ -1,0 +1,18 @@
+# 16. Monoalphabetic Cipher Frequency Attack
+
+from collections import Counter
+
+cipher = "WKH TXLFN EURZQ IRA MXPSV"
+
+freq = Counter(c for c in cipher if c.isalpha())
+print("Letter Frequency:", freq)
+
+# English frequency order
+english = "ETAOINSHRDLCUMWFGYPBVKJXQZ"
+
+# Cipher frequency order
+cipher_order = "".join([x[0] for x in freq.most_common()])
+
+print("\nPossible Mapping:")
+for i in range(min(len(cipher_order), len(english))):
+    print(cipher_order[i], "->", english[i])
