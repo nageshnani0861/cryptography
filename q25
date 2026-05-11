@@ -1,0 +1,12 @@
+# 25. RSA Common Factor Attack
+
+import math
+
+n1 = 391   # 17 * 23
+n2 = 437   # 19 * 23
+
+p = math.gcd(n1, n2)
+
+print("Common Factor =", p)
+print("n1 factors:", p, "and", n1 // p)
+print("n2 factors:", p, "and", n2 // p)
