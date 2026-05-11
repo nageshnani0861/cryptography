@@ -1,0 +1,13 @@
+# 29. SHA-3 State Diffusion Analysis
+
+# Simple avalanche effect check using hashlib
+import hashlib
+
+m1 = b"HELLO"
+m2 = b"HELLo"   # one character changed
+
+h1 = hashlib.sha3_256(m1).hexdigest()
+h2 = hashlib.sha3_256(m2).hexdigest()
+
+print("Hash1:", h1)
+print("Hash2:", h2)
