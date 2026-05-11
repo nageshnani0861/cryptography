@@ -1,0 +1,9 @@
+# 11. Playfair Keyspace Analysis
+
+# Number of possible Playfair keys = 25!
+# (since I and J are combined)
+
+import math
+
+keyspace = math.factorial(25)
+print("Playfair Keyspace =", keyspace)
