@@ -1,0 +1,17 @@
+# 14. One-Time Pad (Vigenere Variant)
+
+def otp_encrypt(text, key):
+    result = ""
+    text = text.upper()
+    key = key.upper()
+
+    for i in range(len(text)):
+        if text[i].isalpha():
+            t = ord(text[i]) - 65
+            k = ord(key[i]) - 65
+            result += chr((t + k) % 26 + 65)
+        else:
+            result += text[i]
+    return result
+
+print(otp_encrypt("HELLO", "XMCKL"))   # EQNVZ
