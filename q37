@@ -1,0 +1,9 @@
+# 37. Monoalphabetic Cipher Frequency Attack System
+
+from collections import Counter
+
+cipher = "YMJ VZNHP GWTBS KTC OZRUJI"
+freq = Counter(cipher.replace(" ", ""))
+
+for ch, count in freq.most_common():
+    print(ch, ":", count)
