@@ -1,0 +1,11 @@
+# 32. DSA Signature Randomization Analysis
+
+import random
+
+q = 23
+x = 5       # private key
+k = random.randint(1, q-1)
+
+print("Random nonce k =", k)
+
+# each new signature must use a different k
