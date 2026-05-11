@@ -1,0 +1,14 @@
+# 24. RSA Private Key Computation
+
+p = 61
+q = 53
+e = 17
+
+n = p * q
+phi = (p - 1) * (q - 1)
+
+d = pow(e, -1, phi)
+
+print("n =", n)
+print("phi =", phi)
+print("Private key d =", d)
