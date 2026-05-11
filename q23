@@ -1,0 +1,18 @@
+# 23. Counter Mode Encryption (CTR)
+
+from Crypto.Cipher import AES
+from Crypto.Util import Counter
+
+key = b"1234567890123456"
+ctr = Counter.new(128)
+
+cipher = AES.new(key, AES.MODE_CTR, counter=ctr)
+
+msg = b"HELLO WORLD"
+encrypted = cipher.encrypt(msg)
+print("Encrypted:", encrypted)
+
+# decrypt
+ctr = Counter.new(128)
+cipher = AES.new(key, AES.MODE_CTR, counter=ctr)
+print("Decrypted:", cipher.decrypt(encrypted).decode())
