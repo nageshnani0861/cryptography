@@ -1,0 +1,16 @@
+# 27. RSA Character Encryption Attack
+
+# Small RSA example
+p, q = 11, 13
+n = p * q
+e = 7
+
+m = ord('A')   # plaintext character
+
+cipher = pow(m, e, n)
+print("Ciphertext:", cipher)
+
+# attacker can brute-force because message space is small
+for i in range(128):
+    if pow(i, e, n) == cipher:
+        print("Recovered Character:", chr(i))
