@@ -1,0 +1,25 @@
+# 15. Additive Cipher Frequency Attack
+
+from collections import Counter
+
+cipher = "KHOOR ZRUOG"
+
+letters = [c for c in cipher if c.isalpha()]
+freq = Counter(letters)
+
+most_common = freq.most_common(1)[0][0]
+
+# Assume most common letter in English is E
+shift = (ord(most_common) - ord('E')) % 26
+
+print("Possible Shift:", shift)
+
+# Decrypt using found shift
+result = ""
+for ch in cipher:
+    if ch.isalpha():
+        result += chr((ord(ch) - 65 - shift) % 26 + 65)
+    else:
+        result += ch
+
+print("Possible Plaintext:", result)
