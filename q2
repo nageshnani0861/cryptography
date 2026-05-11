@@ -1,0 +1,14 @@
+# 2. Monoalphabetic Substitution Cipher
+def mono_encrypt(text, key):
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    result = ""
+
+    for ch in text.upper():
+        if ch in alphabet:
+            result += key[alphabet.index(ch)]
+        else:
+            result += ch
+    return result
+
+key = "QWERTYUIOPASDFGHJKLZXCVBNM"
+print(mono_encrypt("HELLO", key))   # ITSSG
