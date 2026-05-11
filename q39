@@ -1,0 +1,9 @@
+# 39. Additive Cipher Automated Cryptanalysis
+
+cipher = "KHOOR"
+
+for shift in range(26):
+    text = ""
+    for ch in cipher:
+        text += chr((ord(ch) - 65 - shift) % 26 + 65)
+    print("Shift", shift, ":", text)
