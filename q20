@@ -1,0 +1,19 @@
+# 20. ECB vs CBC Error Propagation
+
+plaintext = "HELLO123HELLO123"
+
+# Simulated block corruption
+ecb_blocks = ["ABCD", "EFGH"]
+cbc_blocks = ["ABCD", "EFGH"]
+
+# Corrupt first block
+ecb_blocks[0] = "XXXX"
+cbc_blocks[0] = "XXXX"
+
+print("ECB:")
+print("Block1 =", ecb_blocks[0])   # only first block affected
+print("Block2 =", ecb_blocks[1])
+
+print("\nCBC:")
+print("Block1 =", cbc_blocks[0])   # first block affected
+print("Block2 = Corrupted due to chaining")
