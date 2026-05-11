@@ -1,0 +1,14 @@
+# 18. DES Subkey Generation Analysis
+
+shifts = [1, 1, 2, 2, 2, 2, 2, 2,
+          1, 2, 2, 2, 2, 2, 2, 1]
+
+c = "1111000011001100101010101111"
+d = "0101010101100110011110001111"
+
+for i in range(16):
+    c = c[shifts[i]:] + c[:shifts[i]]
+    d = d[shifts[i]:] + d[:shifts[i]]
+    print(f"Round {i+1}:")
+    print("C =", c)
+    print("D =", d)
