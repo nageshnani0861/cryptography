@@ -1,0 +1,18 @@
+# 13. Hill Cipher Known-Plaintext Attack
+# Finds key matrix from plaintext and ciphertext pair
+
+import numpy as np
+
+P = np.array([[7, 4],   # HI
+              [8, 11]]) # IL
+
+C = np.array([[0, 8],   # AI
+              [18, 12]])# SM
+
+# inverse of plaintext matrix mod 26
+P_inv = np.array([[25, 22],
+                  [2, 23]])
+
+K = np.dot(P_inv, C) % 26
+print("Recovered Key Matrix:")
+print(K)
