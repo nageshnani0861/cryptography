@@ -1,0 +1,13 @@
+# 26. RSA Key Regeneration Security
+
+# Same primes reused
+p = 61
+q = 53
+
+n1 = p * q
+n2 = p * q
+
+if n1 == n2:
+    print("Unsafe: same RSA key regenerated")
+else:
+    print("Safe")
