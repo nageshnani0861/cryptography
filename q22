@@ -1,0 +1,17 @@
+# 22. CBC Mode Encryption and Decryption
+
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+
+key = b"1234567890123456"
+iv = b"abcdefghijklmnop"
+
+cipher = AES.new(key, AES.MODE_CBC, iv)
+
+msg = b"HELLO WORLD"
+encrypted = cipher.encrypt(pad(msg, 16))
+print("Encrypted:", encrypted)
+
+cipher = AES.new(key, AES.MODE_CBC, iv)
+decrypted = unpad(cipher.decrypt(encrypted), 16)
+print("Decrypted:", decrypted.decode())
