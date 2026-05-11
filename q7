@@ -1,0 +1,15 @@
+# 7. Simple Substitution Cipher Decryption
+
+def mono_decrypt(cipher, key):
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    result = ""
+
+    for ch in cipher.upper():
+        if ch in key:
+            result += alphabet[key.index(ch)]
+        else:
+            result += ch
+    return result
+
+key = "QWERTYUIOPASDFGHJKLZXCVBNM"
+print(mono_decrypt("ITSSG", key))   # HELLO
