@@ -1,0 +1,16 @@
+# 40. Monoalphabetic Cipher Automated Cryptanalysis
+
+cipher = "ITSSG"
+
+key = {
+    'I':'H',
+    'T':'E',
+    'S':'L',
+    'G':'O'
+}
+
+plain = ""
+for ch in cipher:
+    plain += key.get(ch, '?')
+
+print("Decrypted:", plain)
