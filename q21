@@ -1,0 +1,12 @@
+# 21. Block Cipher Padding Scheme (PKCS#7)
+
+from Crypto.Util.Padding import pad, unpad
+
+text = b"HELLO"
+block_size = 8
+
+padded = pad(text, block_size)
+print("Padded:", padded)
+
+original = unpad(padded, block_size)
+print("Unpadded:", original)
