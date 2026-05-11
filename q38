@@ -1,0 +1,12 @@
+# 38. Hill Cipher Chosen-Plaintext Attack
+
+# Chosen plaintext pairs: BA -> first column, AB -> second column
+# Ciphertext pairs known from encryption
+
+P = [[1, 0],
+     [0, 1]]   # identity matrix
+
+C = [[3, 3],
+     [2, 5]]
+
+print("Recovered Key Matrix =", C)
