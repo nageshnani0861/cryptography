@@ -1,0 +1,10 @@
+# 34. Block Cipher Padding Analysis
+
+block = 8
+text = b"HELLO"
+
+pad_len = block - len(text) % block
+padded = text + bytes([pad_len]) * pad_len
+
+print("Padding Length:", pad_len)
+print("Padded Text:", padded)
