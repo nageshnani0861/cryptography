@@ -1,0 +1,12 @@
+# 35. One-Time Pad Encryption
+
+def otp_encrypt(text, key):
+    result = ""
+    for t, k in zip(text.upper(), key.upper()):
+        if t.isalpha():
+            x = ord(t) - 65
+            y = ord(k) - 65
+            result += chr((x + y) % 26 + 65)
+    return result
+
+print(otp_encrypt("HELLO", "XMCKL"))   # EQNVZ
