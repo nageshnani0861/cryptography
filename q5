@@ -1,0 +1,12 @@
+# 5. Affine Cipher
+def affine_encrypt(text, a, b):
+    result = ""
+    for ch in text.upper():
+        if ch.isalpha():
+            x = ord(ch) - ord('A')
+            result += chr(((a * x + b) % 26) + ord('A'))
+        else:
+            result += ch
+    return result
+
+print(affine_encrypt("HELLO", 5, 8))   # RCLLA
