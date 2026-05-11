@@ -1,0 +1,16 @@
+# 28. Diffie-Hellman Key Exchange Variant
+
+p = 23   # prime
+g = 5    # generator
+
+a = 6    # Alice private key
+b = 15   # Bob private key
+
+A = pow(g, a, p)
+B = pow(g, b, p)
+
+alice_secret = pow(B, a, p)
+bob_secret = pow(A, b, p)
+
+print("Alice Secret:", alice_secret)
+print("Bob Secret:", bob_secret)
