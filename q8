@@ -1,0 +1,25 @@
+# 8. Keyword-Based Substitution Cipher
+
+def keyword_cipher(text, keyword):
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+    # Remove repeated letters from keyword
+    key = ""
+    for ch in keyword.upper():
+        if ch not in key:
+            key += ch
+
+    # Add remaining letters
+    for ch in alphabet:
+        if ch not in key:
+            key += ch
+
+    result = ""
+    for ch in text.upper():
+        if ch.isalpha():
+            result += key[alphabet.index(ch)]
+        else:
+            result += ch
+    return result
+
+print(keyword_cipher("HELLO", "SECRET"))
